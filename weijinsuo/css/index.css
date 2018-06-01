@@ -1,0 +1,392 @@
+/* **********************CSS Reset******************* */
+body{
+	font-size:14px;
+	font-family:"Microsoft YaHei",sans-serif;
+}
+
+a{
+	text-decoration:none;
+	color:#333;
+}
+
+a:hover{
+	text-decoration:none;
+	color:#333;
+}
+
+/* 自定义字体图标 */
+/* 1.通过@font-face定义自己的字体 */
+@font-face{
+	/* 2.声明自己的字体名称 */
+	font-family:"wjs";
+	/* 3.引入字体文件（约束某一段字符代表什么图案） */
+	src:
+	url(../fonts/MiFie-Web-Font.svg) format("svg"),
+	url(../fonts/MiFie-Web-Font.eot) format("embedded-opentype"),
+	url(../fonts/MiFie-Web-Font.ttf) format("truetype"),
+	url(../fonts/MiFie-Web-Font.woff) format("woff");
+}
+
+/* 4.怎样使用维护性更好 */
+.wjs_icon{
+	font-family:wjs;
+}
+
+/*使用伪类给有这个类名的元素前面加上 下面的内容*/
+.wjs_icon_phone::before{	
+	content:"\e908";	/*代表手机图标的字符*/
+}
+
+.wjs_icon_tel::before{	
+	content:"\e909";	/*代表电话图标的字符*/
+}
+
+.wjs_icon_logo::before{
+	content:"\e920";
+}
+
+.wjs_icon_name::before{
+	content:"\e93e";
+}
+
+.wjs_icon_dollar::before{
+	content:"\e903";
+}
+
+.wjs_icon_clock::before{
+	content:"\e906";
+}
+
+.wjs_icon_video::before{
+	content:"\e905";
+}
+
+
+
+
+/* *******************************modal CSS**************************** */
+/* *****************************顶部通栏模块*************************** */
+.wjs_topBar{
+	border-bottom:1px solid #ccc;
+	font-size:12px;
+	color:#666;
+}
+
+.wjs_topBar>.container{}
+.wjs_topBar>.container>.row{}
+
+/* .wjs_topBar>.container>.row>div{
+	height:40px;
+	border-left:1px solid #ccc;
+}
+
+.wjs_topBar>.container>.row>div:first-child{
+	border-left:none;
+} */
+
+/* 选择器：+，~（+表示紧邻的下一个兄弟元素，~表示后面所有的兄弟元素） */
+
+.wjs_topBar>.container>.row>div{
+	height:40px;
+	line-height:40px;
+	text-align:center;
+}
+
+.wjs_topBar>.container>.row>div+div{
+	border-left:1px solid #ccc;
+}
+
+.wjs_topBar .btn-register{
+	border:none;
+	background:#e92322;
+	font-size:12px;
+	color:#fff;
+	padding:3px 12px;
+}
+
+.wjs_topBar .btn-register:hover{
+
+}
+
+.wjs_topBar .btn-login{
+	font-size:12px;
+	color:#666;
+}
+
+.wjs_topBar .btn-login:hover{
+	text-decoration:none;
+	color:#666;
+}
+
+.wjs_app{
+	display:block;	/*让a可以支持宽高*/
+}
+
+.wjs_app img{
+	display:none;
+}
+.wjs_app:hover img{
+	display:block;
+	position:absolute;	/*鼠标滑过图片显示时要定位*/
+	left:50%;
+	margin-left:-60px;
+	border:1px solid #ccc;
+	border-top:none;
+	/*虽然图片默认是在下面，但因为用了定位，所以还是设置一下top比较规范*/
+	/* 因为上面的div高度是40px，所以图片应该离顶部40px */
+	top:40px;
+	z-index:100000;	
+}
+
+
+
+/* ************************导航栏模块********************** */
+/* 1.拷贝模块的源码样式：能准确定位到所有的元素的选择器并且优先级被源码要高 */
+/* 2.针对功能进行覆盖：更换模块名称 */
+/* 
+	3.上述做法的缺点：有一些没有用到的选择器，代码冗余
+	应对方法——删除&保留
+	删除：降低代码量
+	保留：利于维护，方便产品更新的时候不用再去修改代码
+ */
+.wjs_nav {
+	margin-bottom:0;
+  	border:none;
+  	border-bottom:1px solid #ccc;
+}
+
+.wjs_nav .wjs_icon_logo{
+	font-size:50px;
+	color:#e92322;
+	vertical-align:middle;
+}
+
+.wjs_nav .wjs_icon_name{
+	font-size:36px;
+	color:#333;
+	vertical-align:middle;
+}
+
+.wjs_nav .navbar-brand {
+  color: #777;
+	height:80px;
+	line-height:50px;
+}
+.wjs_nav .navbar-brand:hover,
+.wjs_nav .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: transparent;
+}
+.wjs_nav .navbar-text {
+  color: #777;
+}
+.wjs_nav .navbar-nav > li > a {
+  color: #777;
+  	height:80px;
+	line-height:50px;
+}
+.wjs_nav .navbar-nav > li > a:hover,
+.wjs_nav .navbar-nav > li > a:focus {
+  color: #777;
+  background-color: transparent;
+  border-bottom:3px solid #e92322;
+}
+.wjs_nav .navbar-nav > .active > a,
+.wjs_nav .navbar-nav > .active > a:hover,
+.wjs_nav .navbar-nav > .active > a:focus {
+  color: #555;
+  border-bottom:3px solid #e92322;
+}
+.wjs_nav .navbar-nav > .disabled > a,
+.wjs_nav .navbar-nav > .disabled > a:hover,
+.wjs_nav .navbar-nav > .disabled > a:focus {
+  color: #ccc;
+  background-color: transparent;
+}
+.wjs_nav .navbar-toggle {
+  border-color: #ddd;
+  	margin-top:23px;
+}
+.wjs_nav .navbar-toggle:hover,
+.wjs_nav .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.wjs_nav .navbar-toggle .icon-bar {
+  background-color: #888;
+}
+.wjs_nav .navbar-collapse,
+.wjs_nav .navbar-form {
+  border-color: #e7e7e7;
+}
+.wjs_nav .navbar-nav > .open > a,
+.wjs_nav .navbar-nav > .open > a:hover,
+.wjs_nav .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (max-width: 767px) {
+  .wjs_nav .navbar-nav .open .dropdown-menu > li > a {
+    color: #777;
+  }
+  .wjs_nav .navbar-nav .open .dropdown-menu > li > a:hover,
+  .wjs_nav .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+    background-color: transparent;
+  }
+  .wjs_nav .navbar-nav .open .dropdown-menu > .active > a,
+  .wjs_nav .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .wjs_nav .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+  }
+  .wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a,
+  .wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .wjs_nav .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+  }
+}
+.wjs_nav .navbar-link {
+  color: #777;
+}
+.wjs_nav .navbar-link:hover {
+  color: #333;
+}
+.wjs_nav .btn-link {
+  color: #777;
+}
+.wjs_nav .btn-link:hover,
+.wjs_nav .btn-link:focus {
+  color: #333;
+}
+.wjs_nav .btn-link[disabled]:hover,
+fieldset[disabled] .wjs_nav .btn-link:hover,
+.wjs_nav .btn-link[disabled]:focus,
+fieldset[disabled] .wjs_nav .btn-link:focus {
+  color: #ccc;
+}
+
+
+
+
+/* ************************轮播图模块********************** */
+.wjs_banner .pc_imgBox{
+    display:block;
+    height:400px;
+    width:100%;
+    background-size:cover;  /*能够使图片铺满，自适应*/
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.wjs_banner .m_imgBox{
+    display:block;
+    width:100%;
+}
+
+.wjs_banner .m_imgBox img{
+    display:block;
+    width:100%;
+}
+
+
+
+
+/* *************************信息模块************************ */
+.wjs_info{
+	border-bottom:1px solid #ccc;
+	padding:15px 0;
+}
+
+/* 如果不满足需求，需要自己利用媒体查询来重新定义 */
+/* 因为bootstrap中的container是有默认宽度的，而项目需求的版心宽度要比默认的小 */
+.wjs_info>.container{	/*所以重新定义信息模块的版心宽度*/
+	width:900px;
+}
+
+/* 但是上面这样设置后，在小屏情况下会出现滚动条，所以这时还要覆盖掉上面的样式 */
+@media screen and (min-width:768px) and (max-width:992px){
+	.wjs_info>.container{
+		width:750px;
+	}
+}
+
+.wjs_info>.container>div>a{
+	display:block;
+	padding:15px 0;
+}
+
+.wjs_info>.container>div>a:hover{
+	color:#e92322;
+}
+
+.wjs_info>.container>div>a .wjs_icon_dollar{
+	font-size:30px;
+}
+
+
+
+
+/* *************************预约模块************************ */
+.wjs_book{
+	padding:40px 0;
+	border-bottom:1px solid #ccc;
+}
+
+.wjs_book .container{
+	width:900px;
+}
+
+@media screen and (min-width:768px) and (max-width:992px){
+	.wjs_book>.container{
+		width:750px;
+	}
+}
+
+@media (max-width:768px){
+	.wjs_book>.container{
+		width:100%;
+	}
+}
+
+.wjs_book .book{
+	color:#e92322;
+	border-bottom:1px dashed #e92322;
+}
+
+.wjs_book .video:hover{
+	color:#e92322;
+}
+
+.wjs_book .wjs_icon{
+	font-size:20px;
+}
+
+
+
+
+/* ***************************产品模块************************ */
+.wjs_product{
+	padding:50px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

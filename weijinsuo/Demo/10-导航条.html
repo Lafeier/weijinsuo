@@ -1,0 +1,73 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">   
+  <head>
+    <meta charset="utf-8">    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>title</title>
+
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="lib/html5shiv/html5shiv.min.js"></script>
+      <script src="lib/respond/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+   
+    <!-- navbar：导航条模块 navbar-default：导航条的默认样式 -->
+    <nav class="navbar navbar-default">
+      <!-- 导航的内容容器 -->
+      <!-- 按项目需求将container-fluid修改为container -->
+      <div class="container">
+        <!-- 包含 商标区域 和 切换按钮(在移动端时显示) -->
+        <div class="navbar-header">
+          <!-- 切换按钮 -->
+          <!-- 
+              类名：collapsed  控制样式
+              属性：
+                data-toggle="collapse"  声明是什么组件——>折叠组件
+                data-target="#bs-example-navbar-collapse-1" 控制的目标元素——>选择器
+              其他（可要可不要）：
+                aria-expanded="false"   aria-*：代表提供给屏幕阅读器使用的（盲人阅读器）
+                sr-only                 screen：代表提供给屏幕阅读器使用的（盲人阅读器）
+           -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- 商标区域 -->
+          <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- 导航链接 表单 其他内容 被切换 -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <!-- 默认的导航 -->
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+          <!-- 右对齐的导航 -->
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+
+
+

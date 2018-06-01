@@ -1,0 +1,76 @@
+<!DOCTYPE html>  <!--html5的文档声明-->
+<html lang="zh-CN">   <!--文档语言声明-->
+  <head>
+    <meta charset="utf-8">    <!--文档编码的声明-->
+    <!-- 要求当前网页使用浏览器的最高版本的内核来渲染 -->
+    <!-- 即遇到IE类型的浏览器，要求使用edge内核来渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 视口的设置：视口的宽度和设备的宽度一致，默认的缩放比例和PC端一致，用户不能自行缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- 目的是优先加载和浏览器解析 -->
+
+
+    <title>title</title>
+
+    <!-- bootstrap核心样式 -->
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- html5shiv和respond这两个文件是分别用来解决IE8浏览器不支持H5标签和媒体查询的  不兼容问题-->
+    <!-- HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- 警告：不能以file形式打开，本地打开。最好http://打开 -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- 在IE9以下情况引入 -->
+    <!--[if lt IE 9]>
+      <script src="lib/html5shiv/html5shiv.min.js"></script>
+      <script src="lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      .container{
+        height:100px;
+        background:pink;
+      }
+
+      .row{
+        height:50px;
+        background:green;
+      }
+
+      .container>.row>div{
+        height:25px;
+        border:1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <!-- 响应式布局容器 -->
+    <div class="container">
+      <!-- 栅格系统：其实就是行和列的布局，网格状布局 -->
+      <!-- 行：row -->
+      <!-- .container容器默认是有15px左右内边距的，.row填充父容器的15px左右内边距 margin-left,margin-right -->
+      <div class="row">
+        <!-- 列：col-*-* *表示不确定（可看成参数） -->
+        <!-- 
+            col：列样式
+            第一个*：表示屏幕大小
+            大屏设备  lg  大屏设备以上生效并且包括本身
+            中屏设备  md  中屏设备以上生效并且包括本身
+            小屏设备  sm  小屏设备以上生效并且包括本身
+            超小屏设备 xs  超小屏设备以上生效并且包括本身
+            第二个*：表示一行里所占的等分，因为默认分成12等分，数字代表占多少分
+         -->
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4"></div>
+      </div>
+    </div>
+
+    <!-- bootstrap依赖于jquery -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!-- bootstrap的js核心文件 -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
